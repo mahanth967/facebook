@@ -42,7 +42,7 @@ public class BrowserOpen extends ExtentReportsData {
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
 		driver.get("https://www.google.com/");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 	}
 	
