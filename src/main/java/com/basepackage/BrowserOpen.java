@@ -1,55 +1,60 @@
 package com.basepackage;
 
 
+import java.time.Duration;
 import java.util.Timer;
-
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
-
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.utility.ExtentReportsData;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 
-public class BrowserOpen extends ExtentReportsData {
+public class BrowserOpen{
 	
-	public WebDriver driver;
-	public ExtentReportsData reportsdata = new ExtentReportsData();
-	
+	public static  WebDriver driver;
+
+
+
 	@BeforeSuite
-	public void extentReports()
+	public static WebDriver browserConfiguration()
 	{
-		reportsdata.generateReport();
-	}
-	
-	
-	
-	@Test
-	public void browserConfiguration() throws InterruptedException
-	{
-		reportsdata.extentCreateLog("Opening browser");
+		
+		ExtentReportsData.generateReport();
+		ExtentReportsData.extentCreateLog("intializing browser");
 		ChromeOptions options = new ChromeOptions();	
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://www.google.com/");
-		Thread.sleep(2000);
-		
+			
+		return driver;
 	}
+
 	
-	@AfterSuite
-	public void closeBrowser() {
-		reportsdata.exitReport();
+	
+	@AfterSuite(alwaysRun=true)
+	public static  void tearDown() {
+		ExtentReportsData.extentCreateLog("closing browser");
+		ExtentReportsData.exitReport();
 		driver.quit();
+		
 	}
 
 }

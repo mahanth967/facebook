@@ -1,4 +1,4 @@
-package com.basepackage;
+package com.utility;
 
 import java.io.File;
 import java.util.Calendar;
@@ -19,26 +19,30 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.model.Log;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.basepackage.BrowserOpen;
 
-public class ExtentReportsData implements IReporter {
-	public static ExtentReports extent;
-	public static ExtentSparkReporter  report;
-	public static ExtentTest test;
-	public void generateReport()
+public class ExtentReportsData {
+	public  static ExtentReports  extent;
+	public  static ExtentSparkReporter  report;
+	public  static ExtentTest test;
+	
+	public static ExtentReports generateReport()
 	{
 		extent = new ExtentReports();
 		report= new ExtentSparkReporter("facebook_report.html");
 		extent.attachReporter(report);
 		
+		return extent;
+		
 	}
 	
-	public void exitReport()
+	public static void exitReport()
 	{
 		extent.flush();
 	}
 			
 	
-	public void extentCreateLog(String TestName) {
+	public static void extentCreateLog(String TestName) {
 		test=extent.createTest(TestName);
 	}
 	

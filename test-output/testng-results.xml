@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-17T12:22:01 IST" name="Default suite" finished-at="2022-09-17T12:22:24 IST" duration-ms="23502">
+  <suite started-at="2022-10-03T19:13:36 IST" name="Default suite" finished-at="2022-10-03T19:13:36 IST" duration-ms="329">
     <groups>
     </groups>
-    <test started-at="2022-09-17T12:22:01 IST" name="Default test" finished-at="2022-09-17T12:22:24 IST" duration-ms="23502">
-      <class name="com.basepackage.BrowserOpen">
-        <test-method is-config="true" signature="extentReports()[pri:0, instance:com.basepackage.BrowserOpen@273e7444]" started-at="2022-09-17T12:22:00 IST" name="extentReports" finished-at="2022-09-17T12:22:01 IST" duration-ms="916" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extentReports -->
-        <test-method signature="browserConfiguration()[pri:0, instance:com.basepackage.BrowserOpen@273e7444]" started-at="2022-09-17T12:22:01 IST" name="browserConfiguration" finished-at="2022-09-17T12:22:24 IST" duration-ms="23455" status="PASS">
+    <test started-at="2022-10-03T19:13:36 IST" name="Default test" finished-at="2022-10-03T19:13:36 IST" duration-ms="329">
+      <class name="com.facebook.FacebookLogin">
+        <test-method is-config="true" signature="browserConfiguration()[pri:0, instance:com.facebook.FacebookLogin@12c60152]" started-at="2022-10-03T19:13:32 IST" name="browserConfiguration" finished-at="2022-10-03T19:13:36 IST" duration-ms="4593" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserConfiguration -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.basepackage.BrowserOpen@273e7444]" started-at="2022-09-17T12:22:24 IST" name="closeBrowser" finished-at="2022-09-17T12:22:26 IST" duration-ms="1523" status="PASS">
+        <test-method signature="Login()[pri:0, instance:com.facebook.FacebookLogin@12c60152]" started-at="2022-10-03T19:13:36 IST" name="Login" finished-at="2022-10-03T19:13:36 IST" duration-ms="233" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.facebook.FacebookLogin@12c60152]" started-at="2022-10-03T19:13:37 IST" name="closeBrowser" finished-at="2022-10-03T19:13:37 IST" duration-ms="319" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.basepackage.BrowserOpen -->
+      </class> <!-- com.facebook.FacebookLogin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
